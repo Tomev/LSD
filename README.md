@@ -17,8 +17,10 @@ translated it to English. See [phishing.txt](https://github.com/Tomev/LSD/blob/m
 
 - I generated a generic conference invitation e-mail, which was meant to offer something (conference attendance), but be related to the prompted field of work. See [safe.txt](https://github.com/Tomev/LSD/blob/main/safe.txt).
 
-I checked initial results and tweaked with the prompt a little bit (2h, watching the
-show on TV). Then, for each e-mail type, I queried the model 100 times. The results are as follows. LSD was able to recognize safe mail with 100% accuracy. Spam mail was classified as either spam or phishing in 48 and 43 of the queries respectively. There was also one mislabeling as *spambot*. Phishing attempts were recognized 63 times, two of which were mislabelled, and otherwise considered safe. Analysis of the model chain-of-though led me to believe that the model considered 'From: "random.capital.com" <techcare98@gmail.com>' as sender-receiver rather than alias-address, which made a huge difference in its reasoning. Overall, as an **additional** spam filter, LLMs are a promising tool. I'd, however, advise more tweaks and experimental verification.
+I tried the initial prompt (simple "what kind of e-mail is this")
+and tweaked it a little bit (2h, watching the
+show on TV). Then, for each e-mail type, I queried (ran the
+script below) the model 100 times. The results are as follows. LSD was able to recognize safe mail with 100% accuracy. Spam mail was classified as either spam or phishing in 48 and 43 of the queries respectively. There was also one mislabeling as *spambot*. Phishing attempts were recognized 63 times, two of which were mislabelled, and otherwise considered safe. Analysis of the model chain-of-though led me to believe that the model considered 'From: "random.capital.com" <techcare98@gmail.com>' as sender-receiver rather than alias-address, which made a huge difference in its reasoning. Overall, as an **additional** spam filter, LLMs are a promising tool. I'd, however, advise more tweaks and experimental verification.
 
 ## Code
 
